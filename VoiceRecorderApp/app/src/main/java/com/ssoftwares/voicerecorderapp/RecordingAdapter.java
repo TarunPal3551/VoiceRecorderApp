@@ -1,9 +1,9 @@
-package net.simplifiedcoding.voicerecorderapp;
+package com.ssoftwares.voicerecorderapp;
 
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
+
 import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.IOException;
 import java.util.ArrayList;
 

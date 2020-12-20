@@ -1,4 +1,4 @@
-package net.simplifiedcoding.voicerecorderapp;
+package com.ssoftwares.voicerecorderapp;
 
 /**
  * Created by Manish on 10/3/2017.

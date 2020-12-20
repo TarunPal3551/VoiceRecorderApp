@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="net.simplifiedcoding.voicerecorderapp.MainActivity">
+    tools:context="com.ssoftwares.voicerecorderapp.VoiceTaskActivity">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 android:src="@drawable/ic_play"
                 android:layout_gravity="center_vertical"
                 android:clickable="true"
-                android:tint="@android:color/darker_gray"
+
                 android:focusable="true"
                 android:background="?android:attr/selectableItemBackground"
                 />
@@ -90,7 +90,6 @@
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:src="@drawable/ic_stop"
-                android:tint="@android:color/darker_gray"
                 android:background="?android:attr/selectableItemBackground"
                 android:layout_gravity="center_vertical"
                 android:visibility="gone"
@@ -104,7 +103,15 @@
 
     </LinearLayout>
 
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+    android:id="@+id/textViewMessage"
+    android:text="Message"
+    android:textColor="@color/colorPrimary"
+    android:gravity="center"
+    android:layout_below="@id/linearLayoutRecorder"/>
 
 
 </RelativeLayout>

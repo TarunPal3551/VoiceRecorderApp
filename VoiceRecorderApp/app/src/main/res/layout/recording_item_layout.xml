@@ -15,7 +15,7 @@
         android:src="@drawable/ic_play"
         android:layout_gravity="center_vertical"
         android:clickable="true"
-        android:tint="@android:color/darker_gray"
+
         android:focusable="true"
         android:background="?android:attr/selectableItemBackground"
         />

@@ -1,17 +1,21 @@
-package net.simplifiedcoding.voicerecorderapp;
+package com.ssoftwares.voicerecorderapp;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecordingListActivity extends AppCompatActivity {
 
@@ -34,23 +38,21 @@ public class RecordingListActivity extends AppCompatActivity {
 
     }
 
-    private void fetchRecordings() {
-
-        File root = android.os.Environment.getExternalStorageDirectory();
-        String path = root.getAbsolutePath() + "/VoiceRecorderSimplifiedCoding/Audios";
+    private void fetchRecordings()
+    {
+        File root = Objects.requireNonNull(getExternalCacheDir());
+        String path = root.getPath();
         Log.d("Files", "Path: " + path);
         File directory = new File(path);
         File[] files = directory.listFiles();
-        Log.d("Files", "Size: "+ files.length);
-        if( files!=null ){
+        if (files != null) {
 
             for (int i = 0; i < files.length; i++) {
-
                 Log.d("Files", "FileName:" + files[i].getName());
                 String fileName = files[i].getName();
-                String recordingUri = root.getAbsolutePath() + "/VoiceRecorderSimplifiedCoding/Audios/" + fileName;
+                String recordingUri = root.getAbsolutePath() + fileName;
 
-                Recording recording = new Recording(recordingUri,fileName,false);
+                Recording recording = new Recording(recordingUri, fileName, false);
                 recordingArraylist.add(recording);
             }
 
@@ -58,7 +60,7 @@ public class RecordingListActivity extends AppCompatActivity {
             recyclerViewRecordings.setVisibility(View.VISIBLE);
             setAdaptertoRecyclerView();
 
-        }else{
+        } else {
             textViewNoRecordings.setVisibility(View.VISIBLE);
             recyclerViewRecordings.setVisibility(View.GONE);
         }
@@ -66,7 +68,7 @@ public class RecordingListActivity extends AppCompatActivity {
     }
 
     private void setAdaptertoRecyclerView() {
-        recordingAdapter = new RecordingAdapter(this,recordingArraylist);
+        recordingAdapter = new RecordingAdapter(this, recordingArraylist);
         recyclerViewRecordings.setAdapter(recordingAdapter);
     }
 
@@ -83,7 +85,7 @@ public class RecordingListActivity extends AppCompatActivity {
 
         /** setting up recyclerView **/
         recyclerViewRecordings = (RecyclerView) findViewById(R.id.recyclerViewRecordings);
-        recyclerViewRecordings.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false));
+        recyclerViewRecordings.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerViewRecordings.setHasFixedSize(true);
 
         textViewNoRecordings = (TextView) findViewById(R.id.textViewNoRecordings);
@@ -93,7 +95,7 @@ public class RecordingListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
 
             case android.R.id.home:
                 this.finish();

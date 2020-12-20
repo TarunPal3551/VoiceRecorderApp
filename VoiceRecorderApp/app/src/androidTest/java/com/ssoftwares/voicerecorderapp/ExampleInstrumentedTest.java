@@ -1,4 +1,4 @@
-package net.simplifiedcoding.voicerecorderapp;
+package com.ssoftwares.voicerecorderapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("net.simplifiedcoding.voicerecorderapp", appContext.getPackageName());
+        assertEquals("net.ssoftwares.voicerecorderapp", appContext.getPackageName());
     }
 }

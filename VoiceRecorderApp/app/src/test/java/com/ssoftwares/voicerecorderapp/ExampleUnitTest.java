@@ -1,4 +1,4 @@
-package net.simplifiedcoding.voicerecorderapp;
+package com.ssoftwares.voicerecorderapp;
 
 import org.junit.Test;
 
