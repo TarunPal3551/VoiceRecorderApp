@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by Manish on 10/3/2017.
+ * Created by   on 10/3/2017.
  */
 
 public class RecordingAdapter  extends RecyclerView.Adapter<RecordingAdapter.ViewHolder>{

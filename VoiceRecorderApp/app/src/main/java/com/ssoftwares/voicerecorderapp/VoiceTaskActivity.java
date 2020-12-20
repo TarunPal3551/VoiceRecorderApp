@@ -229,7 +229,8 @@ public class VoiceTaskActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void getInputString(String base64Audio) {
-        String url = "https://speech.googleapis.com/v1/speech:recognize?key=AIzaSyAJBoW5YjuPGG7bJgZFVvlNcPtmX7ENwXQ";
+        String url = "https://speech.googleapis.com/v1/speech:recognize?key" +
+                "=";
         final SpeechData speechData = new SpeechData();
         Audio audio = new Audio();
         audio.setContent(base64Audio.replace("\n", ""));
@@ -334,7 +335,7 @@ public class VoiceTaskActivity extends AppCompatActivity implements View.OnClick
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", " Bearer HRACZ2IKPLT3TYL5IGO5X5LWXVAQDY5U");
+                headers.put("Authorization", " Bearer ");
                 return headers;
 
             }
